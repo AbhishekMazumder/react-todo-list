@@ -15,12 +15,22 @@ class TodoInput extends Component {
 						<input
 							type="text"
 							className="form-control text-capitalize"
-                            placeholder="add todo item"
-                            value={item}
-                            onChnage={handleChange}
+							placeholder="add todo item"
+							value={item}
+							onChnage={handleChange}
 						/>
 					</div>
-                    <button className="btn btn-primary btn-block mt-3 text-uppercase">Add Item</button>
+					<button
+						className={
+							editItem
+								? 'btn btn-success btn-block mt-3 text-uppercase'
+								: 'btn btn-primary btn-block mt-3 text-uppercase'
+						}
+						type="submit"
+						disabled={item ? false : true}
+					>
+						{editItem ? 'Edit Item' : 'Add Item'}
+					</button>
 				</form>
 			</div>
 		);
